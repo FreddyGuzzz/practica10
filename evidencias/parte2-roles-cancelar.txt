@@ -1,0 +1,54 @@
+# DELETE sin token (401)
+# 2026-10-05 21:28:16
+$ curl -s -i -X DELETE http://localhost:3000/inscripciones/2
+
+HTTP/1.1 401 Unauthorized
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: eef54ff6-6fef-446c-97da-b2d418554609
+Content-Type: application/json; charset=utf-8
+Content-Length: 43
+ETag: W/"2b-dGnJzt6gv1nJjX6DJ9RztDWptng"
+Date: Tue, 06 Oct 2026 04:28:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"Unauthorized","statusCode":401}
+
+# DELETE con miembro Karla (403)
+# 2026-10-05 21:28:16
+$ curl -s -i -X DELETE http://localhost:3000/inscripciones/2 -H Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjYwODkyLCJleHAiOjE3OTEyNjQ0OTJ9.EZiF1NqeNqqs92Cotni1-r_bHsnXq4kWk2h2I9RSSyA
+
+HTTP/1.1 403 Forbidden
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: b9d127ec-a82c-4f90-b188-5077021451e8
+Content-Type: application/json; charset=utf-8
+Content-Length: 91
+ETag: W/"5b-Yf2On8sip/rozFPyJeZkPP865KU"
+Date: Tue, 06 Oct 2026 04:28:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"Tu rol no tiene permiso para esta accion","error":"Forbidden","statusCode":403}
+
+# DELETE con entrenador Ana (200)
+# 2026-10-05 21:28:16
+$ curl -s -i -X DELETE http://localhost:3000/inscripciones/2 -H Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImNvcnJlbyI6ImFuYUBpdHNvbi5teCIsInJvbCI6ImVudHJlbmFkb3IiLCJtaWVtYnJvSWQiOm51bGwsImlhdCI6MTc5MTI2MDg5MywiZXhwIjoxNzkxMjY0NDkzfQ.a0mzHZBNW_hKWBZH_AwRE_50f8w_-WOs8IrasWW-9-Y
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: ed86c39e-1a91-4c9f-98f4-796cd560d9e3
+Content-Type: application/json; charset=utf-8
+Content-Length: 173
+ETag: W/"ad-M+EzK/zCg/Zk6ikmY8EzOI+DnNw"
+Date: Tue, 06 Oct 2026 04:28:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":{"id":2,"miembroId":1,"horarioId":1,"creadaEn":"2026-10-06T04:28:15.542Z"},"meta":{"ruta":"/inscripciones/2","duracionMs":13,"timestamp":"2026-10-06T04:28:16.555Z"}}
+

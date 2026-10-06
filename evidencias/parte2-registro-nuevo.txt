@@ -1,0 +1,18 @@
+# Registro de una cuenta nueva (prueba1791260896@itson.mx). Reinicia el servidor y haz login con ella
+# 2026-10-05 21:28:16
+$ curl -s -i -X POST http://localhost:3000/auth/registro -H Content-Type: application/json -d {"correo":"prueba1791260896@itson.mx","password":"gimnasio2026"}
+
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: 7fbb1426-0855-44d3-a04c-2beebdb2be1e
+Content-Type: application/json; charset=utf-8
+Content-Length: 389
+ETag: W/"185-SszdNoJ9ZwgXZ1RMvc38q+O7dzw"
+Date: Tue, 06 Oct 2026 04:28:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImNvcnJlbyI6InBydWViYTE3OTEyNjA4OTZAaXRzb24ubXgiLCJyb2wiOiJtaWVtYnJvIiwibWllbWJyb0lkIjpudWxsLCJpYXQiOjE3OTEyNjA4OTYsImV4cCI6MTc5MTI2NDQ5Nn0.hxM1YAt7uCBhI65jvBAwY2d5ipSC4eFw9_puGpFSz2A","token_type":"Bearer","expires_in":3600},"meta":{"ruta":"/auth/registro","duracionMs":172,"timestamp":"2026-10-06T04:28:16.949Z"}}
+

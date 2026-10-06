@@ -1,0 +1,69 @@
+// Esquema de Prisma del gimnasio: las 4 entidades de la Practica 9 + Usuario (Practica 10).
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Miembro {
+  id            Int           @id @default(autoincrement())
+  nombre        String        @db.VarChar(100)
+  correo        String        @unique @db.VarChar(160)
+  inscripciones Inscripcion[]
+
+  @@map("miembros")
+}
+
+model Clase {
+  id          Int       @id @default(autoincrement())
+  nombre      String    @db.VarChar(100)
+  descripcion String?   @db.VarChar(255)
+  horarios    Horario[]
+
+  @@map("clases")
+}
+
+model Horario {
+  id            Int           @id @default(autoincrement())
+  claseId       Int
+  clase         Clase         @relation(fields: [claseId], references: [id])
+  dia           String        @db.VarChar(20)
+  hora          String        @db.VarChar(5)
+  cupo          Int
+  inscripciones Inscripcion[]
+
+  @@map("horarios")
+}
+
+model Inscripcion {
+  id        Int      @id @default(autoincrement())
+  miembroId Int
+  miembro   Miembro  @relation(fields: [miembroId], references: [id])
+  horarioId Int
+  horario   Horario  @relation(fields: [horarioId], references: [id])
+  creadaEn  DateTime @default(now())
+
+  // un miembro no se puede inscribir dos veces al mismo horario
+  @@unique([miembroId, horarioId])
+  @@map("inscripciones")
+}
+
+// rol va como texto para que el repositorio devuelva el mismo Rol del
+// dominio sin traducir entre dos enums.
+model Usuario {
+  id           Int      @id @default(autoincrement())
+  // @unique: no puede haber dos cuentas con el mismo correo
+  correo       String   @unique @db.VarChar(160)
+  // el hash de bcrypt, nunca la contrasena
+  passwordHash String   @db.VarChar(72)
+  rol          String   @default("miembro") @db.VarChar(20)
+  // ? = puede ser null (el personal no es miembro)
+  miembroId    Int?
+  creadoEn     DateTime @default(now())
+
+  // la tabla se llama usuarios
+  @@map("usuarios")
+}

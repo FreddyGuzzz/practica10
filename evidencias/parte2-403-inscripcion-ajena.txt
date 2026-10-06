@@ -1,0 +1,18 @@
+# Karla intenta inscribir a Sofia, miembro 3 (403)
+# 2026-10-05 21:28:15
+$ curl -s -i -X POST http://localhost:3000/inscripciones -H Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjYwODkyLCJleHAiOjE3OTEyNjQ0OTJ9.EZiF1NqeNqqs92Cotni1-r_bHsnXq4kWk2h2I9RSSyA -H Content-Type: application/json -d {"miembroId":3,"horarioId":1}
+
+HTTP/1.1 403 Forbidden
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: d33d176d-e77e-4492-b01f-c7f1e27388dc
+Content-Type: application/json; charset=utf-8
+Content-Length: 85
+ETag: W/"55-Hi0M48/Q3E/Bg9QDUlKLSndeoPc"
+Date: Tue, 06 Oct 2026 04:28:15 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"message":"Solo puedes inscribirte a ti mismo","error":"Forbidden","statusCode":403}
+

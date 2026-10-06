@@ -1,0 +1,18 @@
+# 409 con la nueva forma (el horario 3 viene lleno en el seed)
+# 2026-10-05 21:28:13
+$ curl -s -i -X POST http://localhost:3000/inscripciones -H Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjYwODkyLCJleHAiOjE3OTEyNjQ0OTJ9.EZiF1NqeNqqs92Cotni1-r_bHsnXq4kWk2h2I9RSSyA -H Content-Type: application/json -d {"miembroId":1,"horarioId":3}
+
+HTTP/1.1 409 Conflict
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: ea6e3606-b02a-47c9-ad6a-ba0c0707b91d
+Content-Type: application/json; charset=utf-8
+Content-Length: 148
+ETag: W/"94-CEbPmav8q0/Qw+Zgo6JZwi3PFUc"
+Date: Tue, 06 Oct 2026 04:28:13 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"statusCode":409,"error":"CupoLlenoError","message":"El horario 3 ya no tiene cupo","path":"/inscripciones","timestamp":"2026-10-06T04:28:13.651Z"}
+

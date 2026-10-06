@@ -1,0 +1,18 @@
+# Inicio de sesion de Karla
+# 2026-10-05 21:28:14
+$ curl -s -i -X POST http://localhost:3000/auth/login -H Content-Type: application/json -d {"correo":"karla@itson.mx","password":"gimnasio2026"}
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: 31465b31-87a9-4356-89c3-09a163a473d2
+Content-Type: application/json; charset=utf-8
+Content-Length: 367
+ETag: W/"16f-HdKCpZGUM5ow70OjvINwCGu5mZE"
+Date: Tue, 06 Oct 2026 04:28:15 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjYwODk1LCJleHAiOjE3OTEyNjQ0OTV9.mb4jHUa2X6RZFdGqba8lcaEjoFbT51u33FFbS2SlWew","token_type":"Bearer","expires_in":3600},"meta":{"ruta":"/auth/login","duracionMs":168,"timestamp":"2026-10-06T04:28:15.204Z"}}
+

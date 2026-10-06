@@ -1,0 +1,19 @@
+# CORS: origen permitido (debe traer Access-Control-Allow-Origin)
+# 2026-10-05 21:28:14
+$ curl -s -i http://localhost:3000/clases -H Origin: http://localhost:5173
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: http://localhost:5173
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: 8d2742ad-76b9-48e9-98f1-2cd5c242e35d
+Content-Type: application/json; charset=utf-8
+Content-Length: 307
+ETag: W/"133-HZPwCGZ+enIuhtJ46Z0Z/Z8lctw"
+Date: Tue, 06 Oct 2026 04:28:14 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":1,"nombre":"Yoga","descripcion":"Flexibilidad y respiracion"},{"id":2,"nombre":"Spinning","descripcion":"Cardio en bicicleta fija"},{"id":3,"nombre":"Funcional","descripcion":"Entrenamiento de cuerpo completo"}],"meta":{"ruta":"/clases","duracionMs":4,"timestamp":"2026-10-06T04:28:14.491Z"}}
+

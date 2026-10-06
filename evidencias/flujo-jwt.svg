@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1520" height="1060" viewBox="0 0 1520 1060" font-family="DejaVu Sans, Arial, sans-serif">
+<defs><marker id="f" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1f2937"/></marker><marker id="r" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#b91c1c"/></marker></defs>
+<rect width="1520" height="1060" fill="#ffffff"/>
+<text x="760.0" y="38" text-anchor="middle" font-size="26" font-weight="bold" fill="#111827">Flujo completo de JWT en la API del gimnasio</text>
+<text x="760.0" y="62" text-anchor="middle" font-size="14" fill="#4b5563">Practica 10 - Parte 2 (login, firma, token, Guard y controlador)</text>
+<rect x="25" y="80" width="190" height="44" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="120" y="104" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">Cliente</text>
+<line x1="120" y1="124" x2="120" y2="770" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,6"/>
+<rect x="305" y="80" width="190" height="62" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="400" y="104" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">AuthController</text>
+<text x="400" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">+ AuthService</text>
+<line x1="400" y1="142" x2="400" y2="770" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,6"/>
+<rect x="555" y="80" width="190" height="44" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="650" y="104" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">bcryptjs</text>
+<line x1="650" y1="124" x2="650" y2="770" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,6"/>
+<rect x="805" y="80" width="190" height="62" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="900" y="104" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">JwtService</text>
+<text x="900" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">(JWT_SECRET)</text>
+<line x1="900" y1="142" x2="900" y2="770" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,6"/>
+<rect x="1055" y="80" width="190" height="62" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1150" y="104" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">JwtAuthGuard</text>
+<text x="1150" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">+ JwtStrategy</text>
+<line x1="1150" y1="142" x2="1150" y2="770" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,6"/>
+<rect x="1295" y="80" width="190" height="44" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+<text x="1390" y="104" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">Controller</text>
+<line x1="1390" y1="124" x2="1390" y2="770" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6,6"/>
+<line x1="130" y1="190" x2="390" y2="190" stroke="#1f2937" stroke-width="2.5" marker-end="url(#f)"/>
+<circle cx="148" cy="174" r="0" />
+<text x="260.0" y="181" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">POST /auth/login</text>
+<circle cx="130" cy="190" r="0"/>
+<circle cx="108" cy="190" r="12" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/><text x="108" y="195" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">1</text>
+<text x="260.0" y="208" text-anchor="middle" font-size="12" fill="#6b7280" stroke="#fff" stroke-width="3" paint-order="stroke">{ correo, password }</text>
+<line x1="410" y1="255" x2="640" y2="255" stroke="#1f2937" stroke-width="2.5" marker-end="url(#f)"/>
+<circle cx="428" cy="239" r="0" />
+<text x="525.0" y="246" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">compare(password, hash)</text>
+<circle cx="410" cy="255" r="0"/>
+<circle cx="388" cy="255" r="12" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/><text x="388" y="260" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">2</text>
+<text x="525.0" y="273" text-anchor="middle" font-size="12" fill="#6b7280" stroke="#fff" stroke-width="3" paint-order="stroke">vuelve a calcular el hash</text>
+<line x1="640" y1="305" x2="410" y2="305" stroke="#1f2937" stroke-width="2.5" stroke-dasharray="8,5" marker-end="url(#f)"/>
+<circle cx="428" cy="289" r="0" />
+<text x="525.0" y="296" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">true / false</text>
+<text x="525.0" y="323" text-anchor="middle" font-size="12" fill="#6b7280" stroke="#fff" stroke-width="3" paint-order="stroke">false => 401 "Credenciales invalidas"</text>
+<line x1="410" y1="370" x2="890" y2="370" stroke="#1f2937" stroke-width="2.5" marker-end="url(#f)"/>
+<circle cx="428" cy="354" r="0" />
+<text x="650.0" y="361" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">signAsync(payload)</text>
+<circle cx="410" cy="370" r="0"/>
+<circle cx="388" cy="370" r="12" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/><text x="388" y="375" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">3</text>
+<text x="650.0" y="388" text-anchor="middle" font-size="12" fill="#6b7280" stroke="#fff" stroke-width="3" paint-order="stroke">firma con JWT_SECRET (1 h)</text>
+<line x1="890" y1="420" x2="410" y2="420" stroke="#1f2937" stroke-width="2.5" stroke-dasharray="8,5" marker-end="url(#f)"/>
+<circle cx="428" cy="404" r="0" />
+<text x="650.0" y="411" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">header.payload.firma</text>
+<line x1="390" y1="480" x2="130" y2="480" stroke="#1f2937" stroke-width="2.5" stroke-dasharray="8,5" marker-end="url(#f)"/>
+<circle cx="148" cy="464" r="0" />
+<text x="260.0" y="471" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">200 { access_token, ... }</text>
+<circle cx="130" cy="480" r="0"/>
+<circle cx="412" cy="480" r="12" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/><text x="412" y="485" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">4</text>
+<text x="260.0" y="498" text-anchor="middle" font-size="12" fill="#6b7280" stroke="#fff" stroke-width="3" paint-order="stroke">token_type: Bearer, expires_in: 3600</text>
+<line x1="130" y1="560" x2="1140" y2="560" stroke="#1f2937" stroke-width="2.5" marker-end="url(#f)"/>
+<circle cx="148" cy="544" r="0" />
+<text x="635.0" y="551" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">GET /inscripciones   Authorization: Bearer &lt;token&gt;</text>
+<circle cx="130" cy="560" r="0"/>
+<circle cx="108" cy="560" r="12" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/><text x="108" y="565" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">5</text>
+<text x="635.0" y="578" text-anchor="middle" font-size="12" fill="#6b7280" stroke="#fff" stroke-width="3" paint-order="stroke">el cliente guarda el token; el servidor no guardo nada</text>
+<path d="M1158,610 h60 v36 h-60" fill="none" stroke="#1f2937" stroke-width="2.5" marker-end="url(#f)"/>
+<circle cx="1134" cy="610" r="12" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/><text x="1134" y="615" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">6</text>
+<text x="1120" y="597" text-anchor="end" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">verifica la firma con JWT_SECRET y que no haya vencido</text>
+<line x1="1160" y1="690" x2="1380" y2="690" stroke="#1f2937" stroke-width="2.5" marker-end="url(#f)"/>
+<circle cx="1178" cy="674" r="0" />
+<text x="1270.0" y="681" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">req.user = payload</text>
+<circle cx="1160" cy="690" r="0"/>
+<circle cx="1138" cy="690" r="12" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/><text x="1138" y="695" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">7</text>
+<text x="1270.0" y="708" text-anchor="middle" font-size="12" fill="#6b7280" stroke="#fff" stroke-width="3" paint-order="stroke">@UsuarioActual() lee sub, rol, miembroId</text>
+<line x1="1380" y1="745" x2="130" y2="745" stroke="#1f2937" stroke-width="2.5" stroke-dasharray="8,5" marker-end="url(#f)"/>
+<circle cx="148" cy="729" r="0" />
+<text x="755.0" y="736" text-anchor="middle" font-size="14" fill="#1f2937" stroke="#fff" stroke-width="4" paint-order="stroke">200 (o 403 si el rol / miembroId no coincide)</text>
+<circle cx="130" cy="745" r="0"/>
+<circle cx="1402" cy="745" r="12" fill="#fde68a" stroke="#92400e" stroke-width="1.5"/><text x="1402" y="750" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">8</text>
+<rect x="30" y="790" width="520" height="240" rx="10" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+<text x="50" y="818" font-size="17" font-weight="bold" fill="#111827">El token: tres partes separadas por puntos</text>
+<rect x="45" y="835" width="160" height="30" rx="5" fill="#fecaca" stroke="#991b1b" stroke-width="2"/><text x="125.0" y="856" text-anchor="middle" font-size="14" font-weight="bold" fill="#991b1b">HEADER</text>
+<text x="49" y="888" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">{ "alg": "HS256",</text>
+<text x="49" y="903" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">  "typ": "JWT" }</text>
+<text x="49" y="960" font-size="12" fill="#991b1b">algoritmo de firma</text>
+<rect x="210" y="835" width="160" height="30" rx="5" fill="#bbf7d0" stroke="#166534" stroke-width="2"/><text x="290.0" y="856" text-anchor="middle" font-size="14" font-weight="bold" fill="#166534">PAYLOAD</text>
+<text x="214" y="888" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">{ "sub": 1,</text><text x="214" y="901" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">"rol": "miembro",</text><text x="214" y="914" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">"miembroId": 1,</text><text x="214" y="927" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">"exp": ... }</text>
+
+
+<text x="214" y="960" font-size="12" fill="#166534">claims: se LEE sin secreto</text>
+<text x="214" y="975" font-size="12" fill="#166534">(solo base64, NO cifrado)</text>
+<rect x="375" y="835" width="160" height="30" rx="5" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/><text x="455.0" y="856" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">FIRMA</text>
+<text x="379" y="888" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">HMAC-SHA256(</text>
+<text x="379" y="903" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">  header.payload,</text>
+<text x="379" y="918" font-size="11" font-family="DejaVu Sans Mono, monospace" fill="#111827">  JWT_SECRET)</text>
+<text x="379" y="960" font-size="12" fill="#1e40af">solo el servidor puede</text>
+<text x="379" y="975" font-size="12" fill="#1e40af">calcularla</text>
+<text x="50" y="1012" font-size="13" fill="#374151">Por eso en el payload nunca va nada secreto (ni el hash).</text>
+<rect x="570" y="790" width="450" height="240" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="2.5"/>
+<text x="590" y="818" font-size="17" font-weight="bold" fill="#991b1b">Si alguien cambia el payload (rol: admin)</text>
+<text x="590" y="848" font-size="13" fill="#7f1d1d">1. Decodifica el payload (base64), cambia "rol" a "admin"</text>
+<text x="590" y="869" font-size="13" fill="#7f1d1d">   y lo vuelve a codificar.</text>
+<text x="590" y="890" font-size="13" fill="#7f1d1d">2. Manda el token con la firma ORIGINAL.</text>
+<text x="590" y="911" font-size="13" fill="#7f1d1d">3. El Guard recalcula la firma con JWT_SECRET sobre</text>
+<text x="590" y="932" font-size="13" fill="#7f1d1d">   el payload nuevo: NO coincide con la que viene.</text>
+<text x="590" y="953" font-size="13" fill="#7f1d1d">4. JwtStrategy rechaza el token => 401 Unauthorized.</text>
+<text x="590" y="974" font-size="13" fill="#7f1d1d">5. validate() ni se ejecuta: req.user nunca se crea.</text>
+<text x="590" y="995" font-size="13" fill="#7f1d1d">El atacante no puede firmar uno nuevo: no tiene JWT_SECRET.</text>
+<rect x="1040" y="790" width="450" height="240" rx="10" fill="#fff7ed" stroke="#c2410c" stroke-width="2.5"/>
+<text x="1060" y="818" font-size="17" font-weight="bold" fill="#9a3412">Si no manda token (o esta vencido)</text>
+<text x="1060" y="848" font-size="13" fill="#7c2d12">1. GET /inscripciones sin Authorization.</text>
+<text x="1060" y="869" font-size="13" fill="#7c2d12">2. JwtAuthGuard (global) busca @Publico(): no esta.</text>
+<text x="1060" y="890" font-size="13" fill="#7c2d12">3. Passport no encuentra el Bearer token.</text>
+<text x="1060" y="911" font-size="13" fill="#7c2d12">4. Responde 401 Unauthorized: el controlador</text>
+<text x="1060" y="932" font-size="13" fill="#7c2d12">   no se ejecuta.</text>
+<text x="1060" y="953" font-size="13" fill="#7c2d12"></text>
+<text x="1060" y="974" font-size="13" fill="#7c2d12">Lo mismo con un token vencido (exp pasada):</text>
+<text x="1060" y="995" font-size="13" fill="#7c2d12">ignoreExpiration: false => 401.</text>
+<text x="1060" y="1016" font-size="13" fill="#7c2d12">Rutas con @Publico() (login, registro, /clases) si pasan.</text>
+</svg>

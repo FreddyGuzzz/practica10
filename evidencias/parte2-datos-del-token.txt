@@ -1,0 +1,18 @@
+# Datos que venian dentro del token (/auth/yo)
+# 2026-10-05 21:28:15
+$ curl -s -i http://localhost:3000/auth/yo -H Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImNvcnJlbyI6ImthcmxhQGl0c29uLm14Iiwicm9sIjoibWllbWJybyIsIm1pZW1icm9JZCI6MSwiaWF0IjoxNzkxMjYwODkyLCJleHAiOjE3OTEyNjQ0OTJ9.EZiF1NqeNqqs92Cotni1-r_bHsnXq4kWk2h2I9RSSyA
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: ea5c05ce-1aca-470b-bbd5-509fcc7388d1
+Content-Type: application/json; charset=utf-8
+Content-Length: 189
+ETag: W/"bd-jgxpzjPCZQ2he9nUJJkTXlRKy8g"
+Date: Tue, 06 Oct 2026 04:28:15 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":{"sub":1,"correo":"karla@itson.mx","rol":"miembro","miembroId":1,"iat":1791260892,"exp":1791264492},"meta":{"ruta":"/auth/yo","duracionMs":1,"timestamp":"2026-10-06T04:28:15.379Z"}}
+

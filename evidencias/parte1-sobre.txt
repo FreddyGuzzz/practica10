@@ -1,0 +1,18 @@
+# Respuesta con el sobre { data, meta }
+# 2026-10-05 21:28:14
+$ curl -s -i http://localhost:3000/clases
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Vary: Origin
+Access-Control-Expose-Headers: Location,X-Request-Id
+X-Request-Id: 7c053a43-210c-4883-880e-ad550f335e7c
+Content-Type: application/json; charset=utf-8
+Content-Length: 307
+ETag: W/"133-rR5+xD/TaS8M8HfghhCfvtnSPq8"
+Date: Tue, 06 Oct 2026 04:28:14 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":1,"nombre":"Yoga","descripcion":"Flexibilidad y respiracion"},{"id":2,"nombre":"Spinning","descripcion":"Cardio en bicicleta fija"},{"id":3,"nombre":"Funcional","descripcion":"Entrenamiento de cuerpo completo"}],"meta":{"ruta":"/clases","duracionMs":2,"timestamp":"2026-10-06T04:28:14.309Z"}}
+
